@@ -1,0 +1,22 @@
+doctype html
+// ------------------------- 
+// Generated with SimpleDoc. 
+// ------------------------- 
+html(lang="en")
+head
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css')
+  style=css
+  script(src='https://code.jquery.com/jquery-2.1.3.min.js')
+body
+  #mainContainer
+    #mainRow
+      #left
+        ul#headers(data-spy='affix')
+          each header in headers
+            li(class='left-' + header.type)
+              a(href=header.anchor)=header.text
+      #right
+        !=content
+        #lastUpdated
+          section
+            p #{updated}

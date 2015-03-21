@@ -1,0 +1,22 @@
+{
+  "name": "simpledocs",
+  "version": "0.0.0",
+  "description": "Create general purpose documentation from markdown files.",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node simpledocs -s"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "coffee-script": "^1.9.1",
+    "commander": "^2.7.1",
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "marked": "^0.3.3"
+  }
+}
