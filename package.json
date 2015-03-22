@@ -4,8 +4,9 @@
   "description": "Create general purpose documentation from markdown files.",
   "main": "app/index.js",
   "scripts": {
-    "start": "node simpledocs -s"
+    "start": "node bin/simpledocs"
   },
+  "bin": "bin/simpledocs",
   "engines": {
     "node": "0.12.x"
   },
