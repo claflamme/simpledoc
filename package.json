@@ -11,6 +11,7 @@
     "start": "node simpledoc"
   },
   "bin": "simpledoc",
+  "preferGlobal": true,
   "engines": {
     "node": "0.12.x"
   },
