@@ -13,8 +13,8 @@ cmd
 
 cwd = process.cwd()
 
-inputDir = cmd.from || cwd
-outputDir = cmd.to || cwd
+inputDir = cmd.from or cwd
+outputDir = cmd.to or cwd
 outputFile = path.join outputDir, 'index.html'
 
 crawler.crawl inputDir, (filenames) ->
