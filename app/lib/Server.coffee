@@ -13,11 +13,15 @@ module.exports = class Server
     @app.get '/', (req, res) ->
       res.sendFile path.resolve(fileName)
 
-    server = @app.listen @app.get('port'), ->
+    server = @app.listen @app.get('port'), =>
+      @displayMessage server
 
-      address = server.address()
 
-      if address.host = '::'
-        address.host = '127.0.0.1'
+  displayMessage: (server) ->
 
-      console.log 'Serving to http://%s:%s', address.host, address.port, '\n'
+    address = server.address()
+
+    if address.host = '::'
+      address.host = '127.0.0.1'
+
+    console.log 'Listening on http://%s:%s', address.host, address.port, '\n'

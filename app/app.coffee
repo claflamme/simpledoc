@@ -1,3 +1,4 @@
+path = require 'path'
 cmd = require 'commander'
 crawler = new (require './lib/Crawler')
 parser = new (require './lib/Parser')
@@ -6,13 +7,19 @@ server = new (require './lib/Server')
 
 cmd
 .option('-s, --serve', 'Start a server for the generated documentation.')
+.option('-f, --from <path>', 'Directory to get the markdown files from.')
+.option('-t, --to <path>', 'Directory to output the index.html file to.')
 .parse(process.argv)
 
-outputPath = __dirname + '/../index.html'
+cwd = process.cwd()
 
-crawler.crawl __dirname + '/../docs', (filenames) ->
+inputDir = cmd.from || cwd
+outputDir = cmd.to || cwd
+outputFile = path.join outputDir, 'index.html'
+
+crawler.crawl inputDir, (filenames) ->
   parser.parse filenames, (html) ->
-    generator.generate html, outputPath, ->
+    generator.generate html, outputFile, ->
 
 if cmd.serve
-  server.serve outputPath
+  server.serve outputFile
