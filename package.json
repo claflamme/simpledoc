@@ -1,12 +1,12 @@
 {
-  "name": "simpledocs",
+  "name": "simpledoc",
   "version": "0.0.0",
   "description": "Create general purpose documentation from markdown files.",
-  "main": "app/index.js",
+  "main": "simpledoc",
   "scripts": {
-    "start": "node bin/simpledocs"
+    "start": "node simpledoc"
   },
-  "bin": "bin/simpledocs",
+  "bin": "simpledoc",
   "engines": {
     "node": "0.12.x"
   },
