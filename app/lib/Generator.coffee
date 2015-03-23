@@ -18,7 +18,8 @@ module.exports = class Generator
     less.render lessSrc, { filename: lessPath }, (err, output) ->
 
       if err
-        throw err
+        console.error err
+
       callback output.css
 
   generate: (html, outputPath, callback) ->
