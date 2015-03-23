@@ -13,8 +13,8 @@ module.exports = class Crawler
 
     fs.readdir @directory, (err, files) =>
       files = @filterMarkdown files
-      files = @resolveFilePaths files
       files = @sortFileList files
+      files = @resolveFilePaths files
       callback files
 
   isMarkdownFile: (filename) ->

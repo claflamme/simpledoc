@@ -1,6 +1,6 @@
 {
   "name": "simpledoc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create general purpose documentation from markdown files.",
   "main": "simpledoc",
   "repository": {
@@ -11,6 +11,7 @@
     "start": "node simpledoc"
   },
   "bin": "simpledoc",
+  "preferGlobal": true,
   "engines": {
     "node": "0.12.x"
   },
@@ -22,6 +23,7 @@
     "commander": "^2.7.1",
     "express": "^4.12.3",
     "jade": "^1.9.2",
+    "less": "^2.4.0",
     "marked": "^0.3.3"
   }
 }
