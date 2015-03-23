@@ -1,12 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import 'variables';
 
 html {
   height: 100%;
 }
 
 body {
-  background: #EEF0F4;
+  background: @bgMain;
   height: 100%;
   color: #ABB4C5;
   font-family: 'Open Sans', sans-serif;
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: #7F8BA0;
+  color: @accentDark;
   font-size: 52px;
   padding: 50px 0;
   letter-spacing: -2px;
@@ -30,7 +31,7 @@ h1 {
 }
 
 h2 {
-  color: #89D2BE;
+  color: @accentLight;
   border-bottom: 1px solid #EEF0F4;
   padding: 15px 0 25px 0;
   margin-bottom: 25px;
@@ -48,7 +49,7 @@ p {
 }
 
 a {
-  color: #89D2BE;
+  color: @accentLight;
 }
 
 pre {
@@ -70,7 +71,7 @@ pre code {
 }
 
 #mainContainer {
-  background: #fff;
+  background: @bgMain;
   min-height: 100%;
 }
 
@@ -80,7 +81,7 @@ pre code {
 
 #left {
   position: fixed;
-  background: #EEF0F4;
+  background: @bgLeft;
   height: 100%;
   padding: 50px 50px 0 50px;
   float: left;
