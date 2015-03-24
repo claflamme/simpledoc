@@ -7,6 +7,7 @@
     "type": "git",
     "url": "http://github.com/claflamme/simpledoc.git"
   },
+  "keywords": ["documentation", "docs", "doc", "markdown"],
   "scripts": {
     "start": "node simpledoc"
   },
