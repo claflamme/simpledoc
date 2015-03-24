@@ -1,13 +1,19 @@
 {
   "name": "simpledoc",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Create general purpose documentation from markdown files.",
   "main": "simpledoc",
   "repository": {
     "type": "git",
     "url": "http://github.com/claflamme/simpledoc.git"
   },
-  "keywords": ["documentation", "docs", "doc", "markdown"],
+  "homepage": "http://claflamme.github.io/simpledoc",
+  "keywords": [
+    "documentation",
+    "docs",
+    "doc",
+    "markdown"
+  ],
   "scripts": {
     "start": "node simpledoc"
   },
@@ -20,6 +26,7 @@
     "coffee-script": "^1.9.1",
     "commander": "^2.7.1",
     "express": "^4.12.3",
+    "highlight.js": "^8.4.0",
     "jade": "^1.9.2",
     "less": "^2.4.0",
     "marked": "^0.3.3"
