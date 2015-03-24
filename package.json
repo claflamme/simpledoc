@@ -13,9 +13,6 @@
   },
   "bin": "simpledoc",
   "preferGlobal": true,
-  "engines": {
-    "node": "0.12.x"
-  },
   "author": "",
   "license": "MIT",
   "dependencies": {
