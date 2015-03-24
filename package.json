@@ -1,20 +1,18 @@
 {
   "name": "simpledoc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Create general purpose documentation from markdown files.",
   "main": "simpledoc",
   "repository": {
     "type": "git",
     "url": "http://github.com/claflamme/simpledoc.git"
   },
+  "keywords": ["documentation", "docs", "doc", "markdown"],
   "scripts": {
     "start": "node simpledoc"
   },
   "bin": "simpledoc",
   "preferGlobal": true,
-  "engines": {
-    "node": "0.12.x"
-  },
   "author": "",
   "license": "MIT",
   "dependencies": {
