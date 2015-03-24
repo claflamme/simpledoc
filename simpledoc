@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-
-var fs = require('fs');
-var path = require('path');
-var app  = path.join(path.dirname(fs.realpathSync(__filename)), './app');
-
-require('coffee-script/register');
-require(app + '/app.coffee');

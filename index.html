@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- ------------------------- -->
+<!-- Generated with SimpleDoc. -->
+<!-- ------------------------- -->
+<html lang="en"></html>
+<head>
+  <style>@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: 700;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: 700;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+#left {
+  position: fixed;
+  background: #eef0f4;
+  height: 100%;
+  padding: 50px 50px 0 50px;
+  float: left;
+  width: 300px;
+  overflow-y: auto;
+}
+#left ul {
+  padding: 0;
+  margin: -10px 0 100px 0;
+}
+#left ul li {
+  list-style: none;
+  font-family: 'Raleway', serif;
+}
+#left ul li a {
+  color: #abb4c5;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  transition: 150ms all;
+}
+#left ul li a:hover {
+  padding-left: 10px;
+  color: #89d2be;
+}
+#left ul li.left-h1 {
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#left ul li.left-h1 a {
+  color: #7f8ba0;
+}
+#left ul li.left-h1 a:hover {
+  color: #89d2be;
+}
+#left ul li.left-h2 {
+  padding-left: 0;
+}
+#left ul li.left-h3 {
+  padding-left: 25px;
+  display: none;
+}
+#left ul li.left-h4 {
+  padding-left: 50px;
+  display: none;
+}
+#left ul li.left-h5 {
+  padding-left: 75px;
+  display: none;
+}
+#left ul li.left-h6 {
+  padding-left: 100px;
+  display: none;
+}
+#right {
+  padding: 0;
+  margin-left: 400px;
+  max-width: 800px;
+}
+#right section {
+  padding: 0 50px;
+}
+#right section p:last-child {
+  margin-bottom: 0;
+}
+#right #lastUpdated {
+  padding: 50px 0;
+  font-size: 14px;
+  font-style: italic;
+}
+html {
+  height: 100%;
+}
+body {
+  background: #ffffff;
+  height: 100%;
+  color: #abb4c5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', serif;
+}
+h1 {
+  color: #7f8ba0;
+  font-size: 52px;
+  padding: 50px 0;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+h2 {
+  color: #89d2be;
+  border-bottom: 1px solid #eef0f4;
+  padding: 16.66666667px 0 25px 0;
+  margin-bottom: 25px;
+  font-size: 36px;
+  letter-spacing: -1px;
+}
+h3 {
+  font-size: 22px;
+  color: #7f8ba0;
+}
+p {
+  margin: 0 0 25px 0;
+}
+a {
+  color: #89d2be;
+}
+code {
+  background: #eef0f4;
+  padding: 3px 6px;
+  border-radius: 7px;
+}
+pre {
+  background: #eef0f4;
+  padding: 16.66666667px 25px;
+  border-left: 5px solid #89d2be;
+  font-size: 14px;
+  margin: 0 0 25px 0;
+}
+pre code {
+  padding: 0;
+}
+#mainContainer {
+  background: #ffffff;
+  min-height: 100%;
+}
+#mainRow {
+  height: 100%;
+}
+</style>
+</head>
+<body>
+  <div id="mainContainer">
+    <div id="mainRow">
+      <div id="left">
+        <ul id="headers" data-spy="affix">
+          <li class="left-h1"><a href="#simpledoc">SimpleDoc</a></li>
+          <li class="left-h2"><a href="#installing">Installing</a></li>
+          <li class="left-h2"><a href="#updating">Updating</a></li>
+          <li class="left-h2"><a href="#uninstalling">Uninstalling</a></li>
+          <li class="left-h1"><a href="#the-basics">The Basics</a></li>
+          <li class="left-h2"><a href="#generating-docs">Generating Docs</a></li>
+          <li class="left-h2"><a href="#file-order">File Order</a></li>
+          <li class="left-h2"><a href="#readme-files">Readme Files</a></li>
+          <li class="left-h1"><a href="#options">Options</a></li>
+          <li class="left-h2"><a href="#from">from</a></li>
+          <li class="left-h2"><a href="#to">to</a></li>
+          <li class="left-h2"><a href="#serve">serve</a></li>
+          <li class="left-h1"><a href="#contributing">Contributing</a></li>
+        </ul>
+      </div>
+      <div id="right"><section class=''><h1 id="simpledoc">SimpleDoc</h1>
+<p>SimpleDoc is a static site generator for documentation. It generates a single, portable HTML file from a directory of markdown files.</p>
+<p>It is useful for writing guides, references, manuals, or any other type of documentation that is made by humans instead of generated from source code.</p>
+<h2 id="installing">Installing</h2>
+<pre><code>npm install -g simpledoc
+</code></pre><h2 id="updating">Updating</h2>
+<pre><code>npm update -g simpledoc
+</code></pre><h2 id="uninstalling">Uninstalling</h2>
+<pre><code>npm uninstall -g simpledoc
+</code></pre></section><section class=''><h1 id="the-basics">The Basics</h1>
+<p>The goal is to make this as simple as possible. If you think any part of the process could be simplified, <a href="https://github.com/claflamme/simpledoc/issues">let me know</a>.</p>
+<h2 id="generating-docs">Generating Docs</h2>
+<p>Just navigate to a directory in your terminal and run <code>simpledoc</code>.</p>
+<p>The program will collect all markdown files in a directory and turn them in to a nice HTML file with permalinks and soothing colours.</p>
+<p>You can keep everything in a single file if you&#39;d like, but I prefer to separate my source files in to sections.</p>
+<h2 id="file-order">File Order</h2>
+<p>Files are read in alphabetical order. If you&#39;d like to change where content appears in the output, prefix the files numerically. For example:</p>
+<pre><code>1 - MyFirstFile.md
+2 - MySecondFile.md
+3 - MyThirdFile.md
+</code></pre><p>SimpleDoc doesn&#39;t care about your filenames, otherwise - it just reads the directory in order.</p>
+<h2 id="readme-files">Readme Files</h2>
+<p>If you include a <code>README.md</code> file in the directory, its contents will <strong>always</strong> be displayed at the top of the generated output, regardless of the other files&#39; names.</p>
+<p>I use the README as an introduction with links to the rendered docs for people viewing the repository.</p>
+</section><section class=''><h1 id="options">Options</h1>
+<p>SimpleDoc may be simple but it still has a few options. You can use any or all of these together.</p>
+<h2 id="from">from</h2>
+<p><em><strong>-f, --from <path></strong></em></p>
+<p>Specify the directory to read markdown files from. Defaults to current directory.</p>
+<pre><code>simpledoc -f C:\Example\Docs
+</code></pre><h2 id="to">to</h2>
+<p><em><strong>-t, --to <path></strong></em></p>
+<p>Specify the output directory for the <code>index.html</code> file. Defaults to current directory.</p>
+<pre><code>simpledoc -t C:\Example\Output
+</code></pre><h2 id="serve">serve</h2>
+<p><em><strong>-s, --serve</strong></em></p>
+<p>Starts a server after compiling docs, running on port 3000 or whatever the <code>$PORT</code> environment variable is set to. Defaults to disabled.</p>
+<pre><code>simpledoc -s
+</code></pre></section><section class=''></section><section class=''><h1 id="contributing">Contributing</h1>
+<p>You can check out the source for SimpleDoc on GitHub:</p>
+<p><a href="https://github.com/claflamme/simpledoc">https://github.com/claflamme/simpledoc</a></p>
+<p>Feel free to submit any issues or suggestions.</p>
+</section>
+        <div id="lastUpdated">
+          <section>
+            <p>Mon Mar 23 2015 23:43:28 GMT-0400 (Eastern Daylight Time)</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
