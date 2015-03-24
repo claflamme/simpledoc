@@ -35,8 +35,8 @@ h1 {
 
 h2 {
   color: @accentLight;
-  border-bottom: 1px solid #EEF0F4;
-  padding: 15px 0 25px 0;
+  border-bottom: 1px solid @bgLeft;
+  padding: (@padding / 3) 0 (@padding / 2) 0;
   margin-bottom: @padding / 2;
   font-size: 36px;
   letter-spacing: -1px;
@@ -57,14 +57,14 @@ a {
 
 pre {
   background: #EEF0F4;
-  padding: 15px @padding / 2;
+  padding: (@padding / 3) (@padding / 2);
   border-left: 5px solid #89D2BE;
   font-size: 14px;
   margin: 0 0 (@padding / 2) 0;
 }
 
 code {
-  background: #EEF0F4;
+  background: @bgLeft;
   padding: 3px 6px;
   border-radius: 7px;
 }
