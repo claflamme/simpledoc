@@ -7,7 +7,12 @@
     "type": "git",
     "url": "http://github.com/claflamme/simpledoc.git"
   },
-  "keywords": ["documentation", "docs", "doc", "markdown"],
+  "keywords": [
+    "documentation",
+    "docs",
+    "doc",
+    "markdown"
+  ],
   "scripts": {
     "start": "node simpledoc"
   },
@@ -20,6 +25,7 @@
     "coffee-script": "^1.9.1",
     "commander": "^2.7.1",
     "express": "^4.12.3",
+    "highlight.js": "^8.4.0",
     "jade": "^1.9.2",
     "less": "^2.4.0",
     "marked": "^0.3.3"
