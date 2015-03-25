@@ -22,9 +22,9 @@ module.exports = class Generator
 
       callback output.css
 
-  getJs: ->
+  getJs: (folder) ->
 
-    basePath = path.join(__dirname, '../static/js')
+    basePath = path.join(__dirname, '../static/js/', folder)
     filenames = fs.readdirSync basePath
     opts = { encoding: 'utf-8' }
     js = ''
@@ -36,7 +36,8 @@ module.exports = class Generator
 
   generate: (html, outputPath, callback) ->
 
-    js = @getJs()
+    jsVendor = @getJs('vendor')
+    jsLib = @getJs('lib')
 
     @getCss (css) ->
 
@@ -58,7 +59,8 @@ module.exports = class Generator
         content: html
         headers: headers
         css: css
-        js: js
+        jsVendor: jsVendor
+        jsLib: jsLib
         updated: new Date().toString()
 
       html = jade.renderFile __dirname + '/../static/main.jade', templateVars
