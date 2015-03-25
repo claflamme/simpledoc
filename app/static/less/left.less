@@ -8,11 +8,12 @@
   width: @leftColWidth;
   overflow-y: auto;
 
-  @media (max-width: @responsiveBreak) {
+  @media @mobile {
     width: auto;
     float: none;
     height: auto;
     position: static;
+    padding: @padding / 2;
   }
 
   ul {

@@ -4,7 +4,7 @@
   margin-left: @leftColWidth + (@padding * 2);
   max-width: @rightColMaxWidth;
 
-  @media (max-width: @responsiveBreak) {
+  @media @mobile {
     margin-left: 0;
   }
 
@@ -12,7 +12,7 @@
 
     padding: 0 @padding;
 
-    @media (max-width: @responsiveBreak) {
+    @media @mobile {
       padding: 0 @padding / 2;
     }
 
