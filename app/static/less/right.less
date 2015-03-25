@@ -4,9 +4,17 @@
   margin-left: @leftColWidth + (@padding * 2);
   max-width: @rightColMaxWidth;
 
+  @media (max-width: @responsiveBreak) {
+    margin-left: 0;
+  }
+
   section {
 
     padding: 0 @padding;
+
+    @media (max-width: @responsiveBreak) {
+      padding: 0 @padding / 2;
+    }
 
     p:last-child {
       margin-bottom: 0;

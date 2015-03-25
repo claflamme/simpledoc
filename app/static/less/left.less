@@ -3,15 +3,22 @@
   position: fixed;
   background: @bgLeft;
   height: 100%;
-  padding: @padding @padding 0 @padding;
+  padding: @padding;
   float: left;
   width: @leftColWidth;
   overflow-y: auto;
 
+  @media (max-width: @responsiveBreak) {
+    width: auto;
+    float: none;
+    height: auto;
+    position: static;
+  }
+
   ul {
 
     padding: 0;
-    margin: ((@padding / 5) * -1) 0 (@padding * 2) 0;
+    margin: 0;
 
     li {
 
