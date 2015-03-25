@@ -5,12 +5,24 @@ doctype html
 html(lang="en")
 head
   style=css
+  script!=js
+  script
+    | $(document).ready(function() {
+    |   var left = $('#left');
+    |   var mobileNav = $('#mobileNav');
+    |   mobileNav.on('click', function() {
+    |     left.removeClass('mobileHide');
+    |   });
+    |   $('a', left).on('click', function() {
+    |     left.addClass('mobileHide');
+    |   });
+    | });
 body
   #mobileNav
-    p Table of Contents &uArr;
+    p &lArr;
   #mainContainer
     #mainRow
-      #left
+      #left.mobileHide
         ul#headers(data-spy='affix')
           each header in headers
             li(class='left-' + header.type)

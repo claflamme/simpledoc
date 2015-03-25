@@ -2,9 +2,13 @@
 
   background: @accentLight;
   color: #fff;
-  height: 50px;
+  height: @padding;
+  width: @padding;
+  text-align: center;
   display: none;
-  padding: 0 @padding / 2;
+  position: fixed;
+  right: @padding / 2;
+  top: @padding / 2;
 
   @media @mobile {
     display: block;
@@ -13,8 +17,16 @@
   p {
     padding: 0;
     margin: 0;
-    line-height: 50px;
+    line-height: @padding;
     font-size: 22px;
+  }
+
+}
+
+.mobileHide {
+
+  @media @mobile {
+    display: none;
   }
 
 }
