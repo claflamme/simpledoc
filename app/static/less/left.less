@@ -9,6 +9,7 @@
   overflow-y: auto;
 
   @media @mobile {
+    display: none;
     width: auto;
     float: none;
     height: auto;
@@ -25,6 +26,10 @@
 
       list-style: none;
       font-family: @fontFamilyHeaders;
+
+      &:first-child a {
+        padding-top: 0;
+      }
 
       a {
         color: @fontColor;
