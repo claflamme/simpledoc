@@ -5,10 +5,15 @@ doctype html
 html(lang="en")
 head
   style=css
+  script!=jsVendor
+  script!=jsLib
+
 body
+  #mobileNav
+    p &lArr;
   #mainContainer
     #mainRow
-      #left
+      #left.mobileHide
         ul#headers(data-spy='affix')
           each header in headers
             li(class='left-' + header.type)

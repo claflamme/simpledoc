@@ -5,19 +5,28 @@
 @import 'variables';
 @import 'left';
 @import 'right';
+@import 'mobile';
 
 html {
   height: 100%;
 }
 
 body {
+
   background: @bgMain;
   height: 100%;
   color: @fontColor;
   font-family: @fontFamilyBody;
   font-size: @fontSize;
   line-height: @lineHeight;
-  font-weight: 300;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+
+  @media @mobile {
+    font-size: @fontSize * 0.9;
+    line-height: @lineHeight * 0.9;
+  }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,20 +36,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+
   color: @accentDark;
   font-size: 52px;
+  line-height: 50px;
   padding: @padding 0;
   letter-spacing: -2px;
   text-transform: uppercase;
+
+  @media @mobile {
+    font-size: 36px;
+    line-height: 34px;
+    padding: @padding / 2 0;
+  }
+
 }
 
 h2 {
+
   color: @accentLight;
   border-bottom: 1px solid @bgLeft;
   padding: (@padding / 3) 0 (@padding / 2) 0;
   margin-bottom: @padding / 2;
   font-size: 36px;
+  line-height: 34px;
   letter-spacing: -1px;
+
+  @media @mobile {
+    font-size: 26px;
+    line-height: 24px;
+    padding: (@padding / 6) 0 (@padding / 4) 0;
+    margin-bottom: @padding / 4
+  }
+
 }
 
 h3 {
@@ -64,11 +92,17 @@ code {
 }
 
 pre {
+
   background: @bgLeft;
   padding: (@padding / 3) (@padding / 2);
   border-left: 5px solid @accentLight;
   font-size: 14px;
   margin: 0 0 (@padding / 2) 0;
+
+  @media @mobile {
+    font-size: 12px;
+    padding: (@padding / 6) (@padding / 4);
+  }
 
   code {
     padding: 0;
@@ -77,8 +111,10 @@ pre {
 }
 
 #mainContainer {
+
   background: @bgMain;
   min-height: 100%;
+
 }
 
 #mainRow {
