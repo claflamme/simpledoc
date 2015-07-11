@@ -6,21 +6,21 @@ module.exports = class Crawler
 
   constructor: ->
 
-  styleExtensions: ['css', 'sass', 'scss', 'less', 'styl']
-
-  crawl: (directory, callback) ->
-
-    tasks = [
+    @tasks = [
       @readWorkingDirectory
       @findMarkdownFiles
       @sortMarkdownFiles
       @findStyleFiles
     ]
 
+  styleExtensions: ['css', 'sass', 'scss', 'less', 'styl']
+
+  crawl: (directory, callback) ->
+
     @directory = directory
     @files = { raw: [], markdown: [], style: [] }
 
-    async.waterfall tasks, (err) =>
+    async.waterfall @tasks, (err) =>
       callback @files
 
   readWorkingDirectory: (callback) =>
