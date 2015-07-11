@@ -1,11 +1,10 @@
 fs = require 'fs'
 path = require 'path'
+_ = require 'lodash'
 
 module.exports = class Crawler
 
   constructor: ->
-
-    @output = ''
 
   crawl: (directory, callback) ->
 
@@ -17,16 +16,19 @@ module.exports = class Crawler
       files = @resolveFilePaths files
       callback files
 
-  isMarkdownFile: (filename) ->
+  hasExtension: (filename, validExtensions) ->
+
+    if _.isString validExtensions
+      validExtensions = [validExtensions]
 
     extension = filename.split('.').pop()
 
-    return extension == 'md'
+    return validExtensions.indexOf(extension) != -1
 
   filterMarkdown: (fileNames) =>
 
     return fileNames.filter (fileName) =>
-      return @isMarkdownFile fileName
+      return @hasExtension fileName, 'md'
 
   sortFileList: (fileNames) ->
 
