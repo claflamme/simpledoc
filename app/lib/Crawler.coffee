@@ -1,20 +1,49 @@
 fs = require 'fs'
-path = require 'path'
 _ = require 'lodash'
+async = require 'async'
 
 module.exports = class Crawler
 
   constructor: ->
 
+  styleExtensions: ['css', 'sass', 'scss', 'less', 'styl']
+
   crawl: (directory, callback) ->
 
+    tasks = [
+      @readWorkingDirectory
+      @findMarkdownFiles
+      @sortMarkdownFiles
+      @findStyleFiles
+    ]
+
     @directory = directory
+    @files = { raw: [], markdown: [], style: [] }
+
+    async.waterfall tasks, (err) =>
+      callback @files
+
+  readWorkingDirectory: (callback) =>
 
     fs.readdir @directory, (err, files) =>
-      files = @filterMarkdown files
-      files = @sortFileList files
-      files = @resolveFilePaths files
-      callback files
+
+      @files.raw = files
+
+      callback null
+
+  findMarkdownFiles: (callback) =>
+
+    @files.markdown = @files.raw.filter (filename) =>
+      return @hasExtension filename, 'md'
+
+    callback null
+
+  findStyleFiles: (callback) =>
+
+    @files.style = @files.raw.filter (filename) =>
+      return @hasExtension filename, @styleExtensions
+
+    callback null
 
   hasExtension: (filename, validExtensions) ->
 
@@ -25,16 +54,11 @@ module.exports = class Crawler
 
     return validExtensions.indexOf(extension) != -1
 
-  filterMarkdown: (fileNames) =>
-
-    return fileNames.filter (fileName) =>
-      return @hasExtension fileName, 'md'
-
-  sortFileList: (fileNames) ->
+  sortMarkdownFiles: (callback) =>
 
     readmeName = 'readme.md'
 
-    fileNames.sort (a, b) ->
+    @files.markdown.sort (a, b) ->
 
       # Always sort readme files to the top
       if a.toLowerCase() == readmeName
@@ -49,11 +73,4 @@ module.exports = class Crawler
         return 1
       return 0
 
-    return fileNames
-
-  resolveFilePaths: (filenames) =>
-
-    filenames.forEach (filename, i) =>
-      filenames[i] = path.resolve @directory, filename
-
-    return filenames
+    callback null

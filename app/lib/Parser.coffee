@@ -14,7 +14,7 @@ module.exports = class Parser
     fileOpts = { encoding: 'utf-8' }
     marked.setOptions { highlight: @highlight }
 
-    filenames.forEach (filename) =>
+    filenames.markdown.forEach (filename) =>
       data = fs.readFileSync filename, fileOpts
       className = if filename.toLowerCase() == 'readme.md' then 'readme' else ''
       @output += "<section class='#{className}'>" + marked(data) + '</section>'
