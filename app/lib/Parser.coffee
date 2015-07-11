@@ -2,24 +2,28 @@ fs = require 'fs'
 path = require 'path'
 marked = require 'marked'
 highlight = require 'highlight.js'
+async = require 'async'
+config = require './config.json'
 
 module.exports = class Parser
 
   constructor: ->
 
-    @output = ''
+    @output = { markdown: [], css: [] }
+    marked.setOptions { highlight: @highlight }
 
   parse: (filenames, callback) ->
 
-    fileOpts = { encoding: 'utf-8' }
-    marked.setOptions { highlight: @highlight }
+    async.eachSeries filenames.markdown, @getMarkdownFileAsHtml, (err) =>
+      @output.markdown = @output.markdown.map (section) ->
+        return "<section>#{section}</section>"
+      callback @output.markdown.join('')
 
-    filenames.markdown.forEach (filename) =>
-      data = fs.readFileSync filename, fileOpts
-      className = if filename.toLowerCase() == 'readme.md' then 'readme' else ''
-      @output += "<section class='#{className}'>" + marked(data) + '</section>'
+  getMarkdownFileAsHtml: (filename, callback) =>
 
-    callback @output
+    data = fs.readFile filename, config.readFileOpts, (err, data) =>
+      @output.markdown.push marked(data)
+      callback()
 
   highlight: (code) ->
     return highlight.highlightAuto(code).value
