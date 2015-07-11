@@ -1,9 +1,9 @@
 path = require 'path'
 cmd = require 'commander'
-crawler = new (require './lib/Crawler')
-parser = new (require './lib/Parser')
-generator = new (require './lib/Generator')
-server = new (require './lib/Server')
+crawler = new (require '../lib/Crawler')
+parser = new (require '../lib/Parser')
+generator = new (require '../lib/Generator')
+server = new (require '../lib/Server')
 
 cmd
 .option('-s, --serve', 'Start a server for the generated documentation.')
