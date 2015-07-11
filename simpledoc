@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var path = require('path');
 require('coffee-script/register');
-require(require.main === module ? './app/cli' : './app/module');
+
+module.exports = require(require.main === module ? './app/cli' : './app/module');

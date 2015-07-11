@@ -1,8 +1,7 @@
 path = require 'path'
 cmd = require 'commander'
-crawler = new (require '../lib/Crawler')
-parser = new (require '../lib/Parser')
-generator = new (require '../lib/Generator')
+SimpleDoc = require '../module'
+
 server = new (require '../lib/Server')
 
 cmd
@@ -15,11 +14,9 @@ cwd = process.cwd()
 
 inputDir = cmd.from or cwd
 outputDir = cmd.to or cwd
-outputFile = path.join outputDir, 'index.html'
 
-crawler.crawl inputDir, (filenames) ->
-  parser.parse filenames, (html) ->
-    generator.generate html, outputFile, ->
+SimpleDoc.render inputDir, outputDir, ->
+  console.log 'finished!'
 
 if cmd.serve
   server.serve outputFile
