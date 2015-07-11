@@ -1,4 +1,5 @@
 fs = require 'fs'
+path = require 'path'
 _ = require 'lodash'
 async = require 'async'
 
@@ -8,6 +9,7 @@ module.exports = class Crawler
 
     @tasks = [
       @readWorkingDirectory
+      @resolveFilePaths
       @findMarkdownFiles
       @sortMarkdownFiles
       @findStyleFiles
@@ -50,9 +52,16 @@ module.exports = class Crawler
     if _.isString validExtensions
       validExtensions = [validExtensions]
 
-    extension = filename.split('.').pop()
+    extension = filename.slice (filename.lastIndexOf('.') + 1)
 
     return validExtensions.indexOf(extension) != -1
+
+  resolveFilePaths: (callback) =>
+
+    @files.raw = @files.raw.map (filename, i) =>
+      return path.resolve @directory, filename
+
+    callback null
 
   sortMarkdownFiles: (callback) =>
 
