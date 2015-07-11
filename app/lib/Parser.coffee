@@ -3,7 +3,7 @@ path = require 'path'
 marked = require 'marked'
 highlight = require 'highlight.js'
 async = require 'async'
-config = require './config.json'
+config = require './Config'
 
 module.exports = class Parser
 
