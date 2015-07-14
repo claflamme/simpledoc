@@ -51,14 +51,18 @@ module.exports = class Crawler
     fs.readdir dir, (err, files) =>
 
       @files.raw.forEach (filename) =>
-        unless filename.slice(0, filename.lastIndexOf('.')) == 'main'
-          return true
-        if @hasExtension(@styleExtensions)
-          @files.style.push filename
-        else if @hasExtension(@templateExtensions)
-          @files.template.push filename
+        @filterFile filename
 
       callback null
+
+  filterFile: (filename) ->
+
+    unless filename.slice(0, filename.lastIndexOf('.')) == 'main'
+      return true
+    if @hasExtension(@styleExtensions)
+      @files.style.push filename
+    else if @hasExtension(@templateExtensions)
+      @files.template.push filename
 
   findMarkdownFiles: (callback) =>
 
