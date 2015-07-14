@@ -12,7 +12,7 @@ module.exports = class Generator
 
     opts = { encoding: 'utf-8' }
 
-    lessPath = path.join __dirname, '../static/less/_main.less'
+    lessPath = path.join __dirname, '../theme/main.less'
     lessSrc = fs.readFileSync lessPath, opts
 
     less.render lessSrc, { filename: lessPath }, (err, output) ->
@@ -24,7 +24,7 @@ module.exports = class Generator
 
   getJs: (folder) ->
 
-    basePath = path.join(__dirname, '../static/js/', folder)
+    basePath = path.join(__dirname, '../theme/js/', folder)
     filenames = fs.readdirSync basePath
     opts = { encoding: 'utf-8' }
     js = ''
@@ -63,7 +63,7 @@ module.exports = class Generator
         jsLib: jsLib
         updated: new Date().toString()
 
-      html = jade.renderFile __dirname + '/../static/main.jade', templateVars
+      html = jade.renderFile __dirname + '/../theme/main.jade', templateVars
 
       fs.writeFileSync outputPath, html
 
