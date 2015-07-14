@@ -34,10 +34,11 @@ module.exports = class Generator
 
     return js
 
-  generate: (html, outputPath, callback) ->
+  generate: (input, outputPath, callback) ->
 
     jsVendor = @getJs('vendor')
     jsLib = @getJs('lib')
+    html = input.markdown.join ''
 
     @getCss (css) ->
 

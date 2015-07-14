@@ -17,7 +17,7 @@ module.exports = class Parser
     async.eachSeries filenames.markdown, @getMarkdownFileAsHtml, (err) =>
       @output.markdown = @output.markdown.map (section) ->
         return "<section>#{section}</section>"
-      callback @output.markdown.join('')
+      callback @output
 
   getMarkdownFileAsHtml: (filename, callback) =>
 
