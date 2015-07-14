@@ -56,9 +56,9 @@ module.exports = class Crawler
     unless filename.slice(0, filename.lastIndexOf('.')) == 'main'
       return true
     if @hasExtension(config.styleExtensions)
-      @files.style.push filename
+      @files.style = filename
     else if @hasExtension(config.templateExtensions)
-      @files.template.push filename
+      @files.template = filename
 
   findMarkdownFiles: (callback) =>
 
