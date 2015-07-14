@@ -2,6 +2,7 @@ fs = require 'fs'
 path = require 'path'
 _ = require 'lodash'
 async = require 'async'
+config = require './Config'
 
 module.exports = class Crawler
 
@@ -14,11 +15,6 @@ module.exports = class Crawler
       @findMarkdownFiles
       @sortMarkdownFiles
     ]
-
-  styleExtensions: ['css', 'less', 'stylus']
-  templateExtensions: ['jade']
-
-  userThemeDir: '_theme'
 
   crawl: (directory, callback) ->
 
@@ -38,7 +34,7 @@ module.exports = class Crawler
 
   readThemeDirectory: (callback) =>
 
-    userDir = path.resolve @directory, @userThemeDir
+    userDir = path.resolve @directory, config.userThemeDir
     dir = path.join __dirname, 'theme'
 
     fs.lstat userDir, (err, stats) =>
@@ -59,9 +55,9 @@ module.exports = class Crawler
 
     unless filename.slice(0, filename.lastIndexOf('.')) == 'main'
       return true
-    if @hasExtension(@styleExtensions)
+    if @hasExtension(config.styleExtensions)
       @files.style.push filename
-    else if @hasExtension(@templateExtensions)
+    else if @hasExtension(config.templateExtensions)
       @files.template.push filename
 
   findMarkdownFiles: (callback) =>
